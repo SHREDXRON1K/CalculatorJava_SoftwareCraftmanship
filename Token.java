@@ -2,6 +2,7 @@ public class Token {
     private String symbol;
     private int degree;
     private double value;
+    private int nestingLevel;
     /* + : 1 d:1
      * - : 2 d:1
      * * : 3 d:2
@@ -25,6 +26,10 @@ public class Token {
         return value;
     }
 
+    public int getNestingLevel(){
+        return nestingLevel;
+    }
+
     public boolean isOperator(){
         if(degree>=0) return true;
         else return false;
@@ -39,4 +44,10 @@ public class Token {
         value = num;
 
     }
+
+    public void setNestingLevel(int nestingLevel){
+        this.nestingLevel = nestingLevel;
+    }
+
+
 }
